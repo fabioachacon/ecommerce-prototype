@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-bg-color: #e2e2e2;
+  --black-background: black;
+  --product-bg: #1a1a1a;
+  --productPageMaxWidth: 1100px;
+  --header-height: 130px;
+  --primary-card-color: #1a1a1a;
+  --secondary-card-color: #6d6d6d;
+  --lightGrey: grey;
+
+  --cardWidth: 300px;
+  --cardHeight: 430px;
+  --cardImageHeight: 70%;
+}
+
+body {
+  background-color: var(--black-background);
+}
