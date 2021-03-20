@@ -1,12 +1,13 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import ApolloClient from 'apollo-boost';
-import ApolloProvider from '@apollo/react-hooks'
+import { ApolloProvider } from '@apollo/react-hooks'
 
 // Components
 import { Template } from './components/MainStyles';
 import Header from './components/partials/Header';
 import Footer from './components/partials/Footer';
+
 
 import Routes from './Routes';
 import { endpoint } from './config';
@@ -24,12 +25,12 @@ import { getToken } from './lib/AuthHandler';
         }
       })
     }
-  });
+  })
 
 function App() {
 
   return (
-      <ApolloProvider client={apolloClient}>
+      <ApolloProvider  client={apolloClient}>
         <BrowserRouter>
           <Template>
             <Header />
