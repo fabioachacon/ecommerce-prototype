@@ -1,10 +1,7 @@
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
-// import { ApolloClient, ApolloProvider } from '@apollo/client';
-import ApolloClient, { InMemoryCache } from 'apollo-boost';
-import { ApolloLink, ApolloProvider, createHttpLink } from '@apollo/react-hooks'
-import { createUploadLink } from 'apollo-upload-client';
-import { setContext } from '@apollo/client/link/context';
+import ApolloClient from 'apollo-boost';
+import ApolloProvider from '@apollo/react-hooks'
 
 // Components
 import { Template } from './components/MainStyles';
@@ -33,7 +30,7 @@ import { getToken } from './lib/AuthHandler';
 function App() {
 
   return (
-      <ApolloProvider  client={apolloClient}>
+      <ApolloProvider client={apolloClient}>
         <BrowserRouter>
           <Template>
             <Header />
