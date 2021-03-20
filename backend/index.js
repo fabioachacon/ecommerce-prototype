@@ -6,7 +6,7 @@ const { PasswordAuthStrategy } = require('@keystonejs/auth-password');
 const { MongooseAdapter: Adapter } = require('@keystonejs/adapter-mongoose');
 const PROJECT_NAME = 'eshop-backend';
 const adapterConfig = { mongoUri: process.env.MONGO_URI};
-// const session = require('express-session');
+const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
 /**
@@ -19,17 +19,19 @@ const MongoStore = require('connect-mongo');
  const ProductSchema = require('./schemas/Product');
  const ProductImageSchema = require('./schemas/ProductImage');
 
-//  const sessionConfig = {
-//    resave: true,
-//    saveUninitialized: true,
-//    cookie: {
-//     maxAge: 1000 * 60 * 60 * 24 * 30
-//   },
-//   secret: process.env.COOKIE_SECRET,
-//   store: MongoStore.create({
-//     mongoUrl: process.env.MONGO_URI,
-//   })
-// }
+ const sessionConfig = {
+   resave: false,
+   saveUninitialized: false,
+   cookie: {
+    secure: process.env.NODE_ENV === 'production', // Default to true in production
+    maxAge: 1000 * 60 * 60 * 24 * 30, // 30 days
+    sameSite: false,
+  },
+  secret: process.env.COOKIE_SECRET,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGO_URI,
+  })
+}
 
 const keystone = new Keystone({
   adapter: new Adapter(adapterConfig),
@@ -63,5 +65,8 @@ module.exports = {
       authStrategy,
       isAccessAllowed: ({ authentication: { item: user, listKey: list } }) => !!user && !!user.isAdmin
      }),
-    ]
+    ],
+    // configureExpress: app => {
+    //   app.use(session(sessionConfig));
+    // }
 };
