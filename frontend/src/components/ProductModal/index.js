@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import formatMoney from '../../helpers/MoneyFormatter';
+import formatMoney from '../../lib/MoneyFormatter';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import { FixedContainer } from './styled';
 

@@ -9,13 +9,21 @@ const User = {
         },
         email: {
             type: Text,
-            isRequired: true
+            isRequired: true,
+            isUnique: true
         },
         password: {
             type: Password,
             isRequired: true
+        },
+        isAdmin: {
+            type: Checkbox,
+            isRequired: true
         }
-    }
+    },
+    access: ({ authentication: { item, listKey } }) => {
+        return true;
+      },
 }
 
 module.exports = User;

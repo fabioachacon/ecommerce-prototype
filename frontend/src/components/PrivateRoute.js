@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, useHistory, Redirect } from 'react-router-dom';
-import { isLogged } from '../helpers/AuthHandler';
+import { isLogged } from '../lib/AuthHandler';
 
 const PrivateRoute = ({children, ...rest}) => {
     const logged = isLogged();

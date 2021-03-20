@@ -2,10 +2,12 @@ import React from 'react';
 import { StyledHeader } from './styled';
 import { Link } from 'react-router-dom';
 
-import { isLogged, doLogout } from '../../../helpers/AuthHandler';
+import { isLogged, doLogout } from '../../../lib/AuthHandler';
+import { useUser } from '../../../lib/useUser';
+import SignOut from '../../SignOut';
 
 const Header = () => {
-    const logged = isLogged();
+    const user = useUser();
 
     return (
         <StyledHeader>
@@ -33,7 +35,7 @@ const Header = () => {
                 </nav>
                 <nav className='right-nav'>
                   <ul>
-                    {!logged &&
+                    {!user &&
                      <>
                         <li>
                             <Link to='/signin'>Login</Link>
@@ -44,7 +46,7 @@ const Header = () => {
                     </>
                     }
                     
-                    {logged && 
+                    {user && 
                       <>
                         <li>
                             <Link to='/me'>Minha Conta</Link>
@@ -52,8 +54,8 @@ const Header = () => {
                         <li>
                             <Link to='/cart' className='cart-button'>Carrinho</Link>
                         </li>
-                        <li>
-                            <Link to='/signout' className='cart-button'>Sair</Link>
+                        <li className='signup-list-item'>
+                            <SignOut />
                         </li>
                      </>
                     }

@@ -55,6 +55,7 @@ export const PageArea = styled.div`
                 input[type='text'] {
                     width: 100%;
                 }
+
                 button {
                     background-color: #EEC857;
                     color: #FFF;
@@ -79,5 +80,4 @@ export const PageTitle = styled.div`
     font-size: 60px;
     color: #ECC656;
     font-family: "Montserrat";
-
 `;

@@ -47,6 +47,7 @@ export const StyledHeader = styled.div`
     ul {
         list-style: none;
         display: flex;
+        align-items: center;
     }
 
     li {
@@ -63,7 +64,7 @@ export const StyledHeader = styled.div`
             bottom: -3px;
             right: 0;
             left: 0;
-            height: 1.2px;
+            height: 1px;
             transform: scaleX(0);
             background-color: #EEC857;
             transition: transform 0.2s ease;

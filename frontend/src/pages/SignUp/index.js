@@ -6,7 +6,7 @@ import { PageContainer } from '../../components/MainStyles';
 
 // Page Transition
 import { PageAnimation } from '../../animations';
-import {useForm}  from '../../helpers/useForm';
+import { useForm } from '../../lib/useForm';
 
 const SignUp = () => {
     const { inputs, handleChange, clearForm } = useForm({

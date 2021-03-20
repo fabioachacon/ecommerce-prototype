@@ -1,7 +1,7 @@
 import React from 'react';
 import { CardArea } from './styled';
 import { motion } from 'framer-motion';
-import formatMoney from '../../helpers/MoneyFormatter';
+import formatMoney from '../../lib/MoneyFormatter';
 import Link, { useHistory } from 'react-router-dom';
 
 import { FaCartPlus } from 'react-icons/fa';

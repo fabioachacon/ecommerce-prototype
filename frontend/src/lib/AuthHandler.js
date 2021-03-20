@@ -5,7 +5,12 @@ export const isLogged = () => {
     return (token) ? true : false;
 }
 
-export const doLogin = (token, remmenberPassword = false ) => {
+export const getToken = () => {
+    const token = Cookies.get('token');
+    return token;
+}
+
+export const storeCookie = (token, remmenberPassword = false ) => {
     if (remmenberPassword){
         Cookies.set('token', token, {expires: 999});
     } else {
@@ -14,5 +19,5 @@ export const doLogin = (token, remmenberPassword = false ) => {
 }
 
 export const doLogout = () => {
-    Cookies.remove('token');
+    Cookies.remove('keystone.sid');
 }

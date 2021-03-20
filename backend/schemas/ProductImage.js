@@ -1,6 +1,5 @@
 require('dotenv').config();
 const { Relationship, Text } = require('@keystonejs/fields');
-const { Keystone } = require('@keystonejs/keystone');
 const { CloudinaryAdapter } = require('@keystonejs/file-adapters');
 const { CloudinaryImage } = require('@keystonejs/fields-cloudinary-image');
 

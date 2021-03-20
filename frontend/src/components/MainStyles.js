@@ -11,7 +11,7 @@ export const PageContainer = styled(motion.div)`
 `;
 
 export const PageArea = styled(motion.div)`
-
+    
 `;
 
 export const AddToCart = styled.button`
@@ -39,3 +39,11 @@ export const AddToCart = styled.button`
             font-size: 19px;
         }
 `
+
+export const PageTitle = styled.div`
+    text-align: center;
+    padding: 20px 0px;
+    font-size: 60px;
+    color: #ECC656;
+    font-family: "Montserrat";
+`;

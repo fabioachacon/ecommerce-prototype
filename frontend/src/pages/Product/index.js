@@ -5,7 +5,7 @@ import { FaCartPlus } from 'react-icons/fa';
 import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 import { useParams } from 'react-router-dom';
-import formatMoney from '../../helpers/MoneyFormatter'
+import formatMoney from '../../lib/MoneyFormatter'
 
 import { PageAnimation } from '../../animations';
 
