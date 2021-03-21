@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { CardArea } from './styled';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import formatMoney from '../../lib/MoneyFormatter';
-import Link, { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
-
-import { FaCartPlus } from 'react-icons/fa';
+import { quickViewAnimation } from '../../animations';
 
 const ProductItem = ({ data, setModalData, setShowDetail }) => {
     const history = useHistory();
@@ -29,6 +28,8 @@ const ProductItem = ({ data, setModalData, setShowDetail }) => {
         }
     }
 
+
+
     return (
         <CardArea 
             onMouseOver={() => setDisplayBox(true)}
@@ -37,10 +38,19 @@ const ProductItem = ({ data, setModalData, setShowDetail }) => {
             onClick={handlePageChange}>
             <div layout className="product-img">
                 <img src={data?.photo?.image?.publicUrlTransformed || data.image} alt=""/>
-                <div onClick={showDetailHandler} className="more-details">
-                    {/* <AiOutlineSearch /> */}
-                    Visualização Rápida
-                </div>
+                <AnimatePresence exitBeforeEnter>
+                { displayBox &&
+                    <motion.div
+                        variants={ quickViewAnimation }
+                        initial='hidden'
+                        animate='visible' 
+                        exit='exit' 
+                        onClick={showDetailHandler} 
+                        className="more-details">
+                        <AiOutlineSearch />
+                        Visualização Rápida
+                    </motion.div> }
+                </AnimatePresence>
             </div>
             <div className="product-info">
                 <div className="name">

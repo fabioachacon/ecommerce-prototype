@@ -34,21 +34,25 @@ export const CardArea = styled(motion.div)`
         }
 
         .more-details{
-            background:rgba(0, 0, 0, 0.6);
+            background-color: black;
             position: absolute;
-            bottom: 0px;
-            left: 0;
-            right: 0;
-            height: 50px;
-            transition: all 0.2s ease-in-out;
+            bottom: 0;
+            left: 10px;
+            right: 10px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 0.4rem;
             cursor: pointer;
             font-size: 11px;
             font-family: "Montserrat", sans-serif;
             font-weight: bold;
-            transform: ${props => props.displayBox ? 'translateY(0)' : 'translateY(100%)'};
+            color: #FFF;
+            
+            svg {
+                font-size: 1.5rem;
+            }
         }
     }
 
