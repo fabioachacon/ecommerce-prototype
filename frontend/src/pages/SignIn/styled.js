@@ -4,12 +4,14 @@ import { motion } from 'framer-motion'
 export const PageArea = styled(motion.div)`
     display: flex;
     flex-direction: column;
-    margin: 2rem;
     font-size: 1.2rem;
     color: #FFF;
     align-items: center;
+    justify-content: center;
+    height: 70vh;
 
     fieldset {
+        margin-top: 1.5rem;
         width: 100%;
         border: none;
     }
@@ -33,6 +35,10 @@ export const PageArea = styled(motion.div)`
         outline: none;
         margin-top: 5px;
         font-size: 1.1rem;
+        border: 1px solid transparent;
+        &:focus {
+            border: 1px solid #EEC857;
+        }
     }
 
     button {

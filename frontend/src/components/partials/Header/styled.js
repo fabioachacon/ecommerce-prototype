@@ -10,6 +10,7 @@ export const StyledHeader = styled.div`
     left: 0;
     top: 0;
     z-index: 999;
+    display: ${props => props.displayHeader ? 'none' : 'block'};
 
     .container {
         max-width: 1024px;

@@ -6,11 +6,13 @@ export const Container = styled.div`
 
 export const PageArea = styled.div`
      display: flex;
-     justify-content: center;
+     justify-content: flex-start;
+     flex-direction: column;
      /* border: 1px solid #adadad; */
 
      fieldset {
          border: none;
+         margin-top: 1rem;
      }
 
      form {
@@ -40,14 +42,14 @@ export const PageArea = styled.div`
                 display: flex;
                 input {
                     font-size: 14px;
-                    padding: 5px;
+                    padding: 8px  5px;
                     border: 1px solid #DDD;
                     border-radius: 2px;
                     outline: none;
                     transition: all ease 0.4s;
                     &:focus {
-                        border: 1px solid #333;
-                        color: #333;
+                        border: 1px solid #EEC857;
+        
                     }
                 }
                 input[type='password'],
@@ -61,13 +63,14 @@ export const PageArea = styled.div`
                     color: #FFF;
                     border: none;
                     outline: none;
-                    padding: 10px 30px;
+                    padding: 15px 30px;
                     border-radius: 3px;
                     font-size: 15px;
                     cursor: pointer;
                     position: relative;
-                    margin: auto;
                     font-weight: bold;
+                    width: 100%;
+                    margin-top: 5px;
                 }
             }
          }

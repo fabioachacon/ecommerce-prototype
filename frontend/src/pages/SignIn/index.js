@@ -52,10 +52,9 @@ const SignIn = () => {
         <PageContainer
             variants={PageAnimation}
             initial='hidden'
-            animate='visible'
-            exit='exit'>
-          <PageTitle>Entrar.</PageTitle>
+            animate='visible'>
           <PageArea>
+          <PageTitle>Fazer Login</PageTitle>
             <fieldset disabled={loading}>
                 <form onSubmit={handleSubmit} method="POST">
                     <label htmlFor="email">

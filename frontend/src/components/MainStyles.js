@@ -43,7 +43,7 @@ export const AddToCart = styled.button`
 export const PageTitle = styled.div`
     text-align: center;
     padding: 20px 0px;
-    font-size: 60px;
+    font-size: 50px;
     color: #ECC656;
     font-family: "Montserrat";
 `;
