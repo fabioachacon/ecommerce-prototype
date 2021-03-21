@@ -11,7 +11,6 @@ export const CardArea = styled(motion.div)`
     border: 1px solid transparent;
     border-radius: 3px;
     padding: 6px;
-    margin: 20px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     color: #FFF;
