@@ -30,7 +30,7 @@ import { getToken } from './lib/AuthHandler';
 function App() {
 
   return (
-      <ApolloProvider  client={apolloClient}>
+      <ApolloProvider client={apolloClient}>
         <BrowserRouter>
           <Template>
             <Header />

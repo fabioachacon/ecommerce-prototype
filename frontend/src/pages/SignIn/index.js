@@ -30,7 +30,6 @@ const SignIn = () => {
     const [signIn, { loading, client, error }] = useMutation(SIGNIN_MUTATION, {
         variables: inputs,
         onCompleted: async (data) => {
-            // localStorage.setItem('token', data?.authenticateUserWithPassword.token)
             storeCookie(data?.authenticateUserWithPassword.token);
             await client.clearStore();
         },
@@ -40,12 +39,14 @@ const SignIn = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(!loading) {
-          await signIn();
-          history.push('/');
-          history.go(0);
-        }
+
+        await signIn();
         clearForm();
+        
+        if(!loading) {
+            history.push('/');
+            history.go(0);
+        }
     }
 
     return (
