@@ -40,7 +40,7 @@ export const CardArea = styled(motion.div)`
             left: 0;
             right: 0;
             height: 50px;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.2s ease-in-out;
             display: flex;
             align-items: center;
             justify-content: center;
