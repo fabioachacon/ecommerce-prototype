@@ -22,12 +22,33 @@ export const CardArea = styled(motion.div)`
 
     .product-img{
         height: var(--cardImageHeight, 65%);
+        position: relative;
+        overflow: hidden;
+
         img {
             height: 100%;
             width: 100%;
             object-fit: cover;
             object-position: top;
             border-radius: 2px;
+        }
+
+        .more-details{
+            background:rgba(0, 0, 0, 0.6);
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            height: 50px;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 11px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            transform: ${props => props.displayBox ? 'translateY(0)' : 'translateY(100%)'};
         }
     }
 

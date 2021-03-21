@@ -54,7 +54,7 @@ const SignIn = () => {
             initial='hidden'
             animate='visible'>
           <PageArea>
-          <PageTitle>Fazer Login</PageTitle>
+            <PageTitle>Fazer Login</PageTitle>
             <fieldset disabled={loading}>
                 <form onSubmit={handleSubmit} method="POST">
                     <label htmlFor="email">
